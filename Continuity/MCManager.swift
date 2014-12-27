@@ -35,8 +35,10 @@ class MCManager: NSObject, MCSessionDelegate {
     func advertiseSelf(shouldAdvertise: Bool) {
         if shouldAdvertise {
             advertiser = MCAdvertiserAssistant(serviceType: SERVICE_TYPE, discoveryInfo: nil, session: session)
+            println("\(shouldAdvertise):\(advertiser)")
             advertiser!.start()
         } else {
+            println("\(shouldAdvertise):\(advertiser)")
             advertiser!.stop()
             advertiser = nil
         }
@@ -47,11 +49,13 @@ class MCManager: NSObject, MCSessionDelegate {
     }
     
     func session(session: MCSession!, peer peerID: MCPeerID!, didChangeState state: MCSessionState) {
-        let dict = ["peerID": peerID, "state": state.rawValue]
+        println("didChangeState: \(session):\(peerID):\(state)")
+        var dict: [String: AnyObject] = ["peerID": peerID, "state": String(state.rawValue)]
         NSNotificationCenter.defaultCenter().postNotificationName("MCDidChangeStateNotification", object: nil, userInfo: dict)
     }
     
     func session(session: MCSession!, didReceiveData data: NSData!, fromPeer peerID: MCPeerID!) {
+        println("didReceiveData: \(session):\(data):\(peerID)")
         let dict = ["peerID": peerID, "data": data]
         NSNotificationCenter.defaultCenter().postNotificationName("MCDidReceiveDataNotification", object: nil, userInfo: dict)
     }

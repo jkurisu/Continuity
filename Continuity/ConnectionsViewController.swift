@@ -62,33 +62,34 @@ class ConnectionsViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         nameTextField.delegate = self
-        
         appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate
         appDelegate?.mcManager?.setupPeerAndSessionWithDisplayName(UIDevice.currentDevice().name)
         appDelegate?.mcManager?.advertiseSelf(visibleSwitch.on)
-        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "peerDidChangeStateWithNotification:", name: "MCDidChangeStateNotification", object: nil)
-        
     }
 
     
     func peerDidChangeStateWithNotification(notification: NSNotification) {
+        println("peerDidChangeStateWithNotification: \(notification)")
         var info = notification.userInfo!
         var peerId = info["peerID"] as MCPeerID
         
         let peerDisplayName = peerId.displayName
         
-        var state = info["state"] as Int   // Need a MCSessionState not an Int
-        let sessionState = MCSessionState(rawValue: state)
+        var state = info["state"] as String   // Need a MCSessionState not an Int
+        println("state: \(state)")
+        let sessionState = MCSessionState(rawValue: state.toInt()!)
+        println("sessionState: \(sessionState!)")
         
-        
-        if sessionState != MCSessionState.Connecting {
-            if sessionState == MCSessionState.Connected {
+        if sessionState! != MCSessionState.Connecting {
+            if sessionState! == MCSessionState.Connected {
+                println("Connected")
                 connectedDevices.append(peerDisplayName)
-            } else if sessionState == MCSessionState.NotConnected {
+            } else if sessionState! == MCSessionState.NotConnected {
+                println("NotConnected: \(connectedDevices.count)")
                 if connectedDevices.count > 0 {
+                    println("NotConnected: \(connectedDevices)")
                     if let i = find(connectedDevices, peerDisplayName) {
                         connectedDevices.removeAtIndex(i)
                     }
@@ -96,6 +97,9 @@ class ConnectionsViewController: UIViewController, UITableViewDelegate, UITableV
             }
             connectedDevicesTableView.reloadData()
             let peersExist = appDelegate?.mcManager?.session?.connectedPeers.count == 0
+            println("peersExist: \(peersExist)")
+            
+            
             disconnectButton.enabled = !peersExist
             nameTextField.enabled = peersExist
         }
@@ -164,10 +168,10 @@ class ConnectionsViewController: UIViewController, UITableViewDelegate, UITableV
         appDelegate?.mcManager?.browser?.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    func browserViewController(browserViewController: MCBrowserViewController!, shouldPresentNearbyPeer peerID: MCPeerID!, withDiscoveryInfo info: [NSObject : AnyObject]!) -> Bool {
-        println("shouldPresentNearbyPeer")
-        return false
-    }
+//    func browserViewController(browserViewController: MCBrowserViewController!, shouldPresentNearbyPeer peerID: MCPeerID!, withDiscoveryInfo info: [NSObject : AnyObject]!) -> Bool {
+//        println("shouldPresentNearbyPeer")
+//        return true
+//    }
 
     
 

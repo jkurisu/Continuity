@@ -17,6 +17,7 @@
 		317364B21A4C952C00D97582 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 317364B11A4C952C00D97582 /* Images.xcassets */; };
 		317364B51A4C952C00D97582 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 317364B31A4C952C00D97582 /* LaunchScreen.xib */; };
 		317364C11A4C952C00D97582 /* ContinuityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317364C01A4C952C00D97582 /* ContinuityTests.swift */; };
+		317A4DD41A4F20B40075EC64 /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 317A4DD31A4F20B40075EC64 /* MultipeerConnectivity.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		317364BA1A4C952C00D97582 /* ContinuityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ContinuityTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		317364BF1A4C952C00D97582 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		317364C01A4C952C00D97582 /* ContinuityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinuityTests.swift; sourceTree = "<group>"; };
+		317A4DD31A4F20B40075EC64 /* MultipeerConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MultipeerConnectivity.framework; path = System/Library/Frameworks/MultipeerConnectivity.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				317A4DD41A4F20B40075EC64 /* MultipeerConnectivity.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +70,7 @@
 		317364991A4C952C00D97582 = {
 			isa = PBXGroup;
 			children = (
+				317A4DD31A4F20B40075EC64 /* MultipeerConnectivity.framework */,
 				317364A41A4C952C00D97582 /* Continuity */,
 				317364BD1A4C952C00D97582 /* ContinuityTests */,
 				317364A31A4C952C00D97582 /* Products */,
