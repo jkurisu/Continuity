@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		313276811A4E11610091534F /* ConnectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313276801A4E11610091534F /* ConnectionsViewController.swift */; };
+		313276831A4E1F6D0091534F /* MCManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313276821A4E1F6D0091534F /* MCManager.swift */; };
+		313276851A4EFA0B0091534F /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313276841A4EFA0B0091534F /* ChatViewController.swift */; };
 		317364A81A4C952C00D97582 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317364A71A4C952C00D97582 /* AppDelegate.swift */; };
 		317364AB1A4C952C00D97582 /* Continuity.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 317364A91A4C952C00D97582 /* Continuity.xcdatamodeld */; };
 		317364AD1A4C952C00D97582 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317364AC1A4C952C00D97582 /* ViewController.swift */; };
@@ -27,6 +30,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		313276801A4E11610091534F /* ConnectionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionsViewController.swift; sourceTree = "<group>"; };
+		313276821A4E1F6D0091534F /* MCManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCManager.swift; sourceTree = "<group>"; };
+		313276841A4EFA0B0091534F /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		317364A21A4C952C00D97582 /* Continuity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Continuity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		317364A61A4C952C00D97582 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		317364A71A4C952C00D97582 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +92,9 @@
 				317364B31A4C952C00D97582 /* LaunchScreen.xib */,
 				317364A91A4C952C00D97582 /* Continuity.xcdatamodeld */,
 				317364A51A4C952C00D97582 /* Supporting Files */,
+				313276801A4E11610091534F /* ConnectionsViewController.swift */,
+				313276821A4E1F6D0091534F /* MCManager.swift */,
+				313276841A4EFA0B0091534F /* ChatViewController.swift */,
 			);
 			path = Continuity;
 			sourceTree = "<group>";
@@ -164,6 +173,7 @@
 				TargetAttributes = {
 					317364A11A4C952C00D97582 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = B9S2HQY9RY;
 					};
 					317364B91A4C952C00D97582 = {
 						CreatedOnToolsVersion = 6.2;
@@ -215,9 +225,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				313276811A4E11610091534F /* ConnectionsViewController.swift in Sources */,
 				317364AD1A4C952C00D97582 /* ViewController.swift in Sources */,
 				317364A81A4C952C00D97582 /* AppDelegate.swift in Sources */,
 				317364AB1A4C952C00D97582 /* Continuity.xcdatamodeld in Sources */,
+				313276851A4EFA0B0091534F /* ChatViewController.swift in Sources */,
+				313276831A4E1F6D0091534F /* MCManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,7 +355,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Continuity/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -352,7 +367,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Continuity/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -411,6 +428,7 @@
 				317364C61A4C952C00D97582 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		317364C71A4C952C00D97582 /* Build configuration list for PBXNativeTarget "ContinuityTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +437,7 @@
 				317364C91A4C952C00D97582 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
